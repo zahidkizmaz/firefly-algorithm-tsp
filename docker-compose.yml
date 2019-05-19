@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  julia:
+    container_name: julia_service
+    image: julia:1.1.0-stretch
+    volumes: 
+      - ".:/usr/src/"
+    working_dir: /usr/src/src/
+    command: julia main.jl
