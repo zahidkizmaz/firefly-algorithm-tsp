@@ -39,18 +39,20 @@ POPULATION_NUMBER = 5
 
 nodes = read_nodes("../data/berlin52.tsp")
 # println(create_weights_matrix(nodes))
-f1 = Firefly(copy(nodes))
-f2 = Firefly(copy(nodes))
+f1 = Firefly(copy(nodes), -1.0)
+f2 = Firefly(copy(nodes), -1.0)
 init_firefly_paths([f1, f2])
 
 distance_matrix = create_distance_matrix(nodes)
+f1.cost = path_cost(f1, distance_matrix)
+println(f1)
 # println(f1.path)
 # println(f2.path)
 r, dist_info = hamming_distance(f1, f2)
 p1 = path_cost(f1, distance_matrix)
 p2 = path_cost(f2, distance_matrix)
 
-println("Hamming d f1-f2:", r)
+println("Hamming d f1-f2: ", r, "info ", dist_info)
 println("f1 path cost: ", p1)
 println("f2 path cost: ", p2)
 
@@ -58,11 +60,12 @@ if (p1 > p2) move_firefly(f1, f2, r) else move_firefly(f2, f1, r) end
 r, dist_info = hamming_distance(f1, f2)
 p1 = path_cost(f1, distance_matrix)
 p2 = path_cost(f2, distance_matrix)
-println("Hamming d f1-f2:", r)
+println("Hamming d f1-f2: ", r, "info ", dist_info)
 println("f1 path cost: ", p1)
 println("f2 path cost: ", p2)
+#println(f1.cost(distance_matrix))
 
-pop = [Firefly(copy(nodes)) for _ in 1:POPULATION_NUMBER]
+pop = [Firefly(copy(nodes), -1.0) for _ in 1:POPULATION_NUMBER]
 init_firefly_paths(pop)
 println(length(pop), " Sized population created!")
 for t in 1:ITERATION_NUMBER

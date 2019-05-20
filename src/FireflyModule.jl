@@ -5,6 +5,7 @@ module FireflyModule
 
     mutable struct Firefly
         path::Array{Node}
+        cost::Float32
     end
 
     function path_cost(firefly::Firefly, distance_matrix)::Float32
@@ -58,8 +59,7 @@ module FireflyModule
     function move_firefly(f1, f2, r)
         """Moving f1 to f2 less than r swap operations.
         """
-        number_of_swaps = Int(ceil(rand() * r))
-        println("Number of swaps: ", number_of_swaps)
+        number_of_swaps = Int(ceil(rand() * (r-2) ))
         d, d_info = hamming_distance(f1, f2)
 
         while number_of_swaps > 0

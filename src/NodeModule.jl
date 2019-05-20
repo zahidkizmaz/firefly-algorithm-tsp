@@ -1,7 +1,6 @@
 module NodeModule
 import Base.show
 
-
     struct Node
         id::Int16
         x::Float32
