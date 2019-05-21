@@ -1,6 +1,10 @@
 using Pkg
 Pkg.update()
 Pkg.build("PyCall")
+Pkg.add("PyPlot")
+
+using PyPlot
+using Random
 
 # Pushing current dir to import modules. 
 push!(LOAD_PATH, "./")
@@ -8,7 +12,6 @@ import NodeModule.Node, NodeModule.euclidean_distance, NodeModule.create_distanc
         FireflyModule.Firefly, FireflyModule.path_cost, FireflyModule.init_firefly_paths,
         FireflyModule.hamming_distance, FireflyModule.inversion_mutation, FireflyModule.move_firefly
 
-using Random
 
 function read_nodes(path::String)
     """Reading nodes from giving file path.
@@ -41,6 +44,9 @@ ATTRACTION_COEFF = 1
 ITERATION_NUMBER = 0 
 POPULATION_NUMBER = 5
 
+println("Insert your file name ")
+file_name = readline()
+println("File name: ", file_name)
 nodes = read_nodes("../data/berlin52.tsp")
 # println(create_weights_matrix(nodes))
 f1 = Firefly(copy(nodes), -1.0)
@@ -95,8 +101,12 @@ for t in 1:ITERATION_NUMBER
     end
 end
 
-Pkg.add("PyPlot")
-using PyPlot
-x = range(0,stop=2*pi,length=1000); y = sin.(3*x + 4*cos.(2*x))
-plot(x, y, color="red", linewidth=2.0, linestyle="--")
-savefig("plot.png")
+# x = range(0,stop=2*pi,length=1000); y = sin.(3*x + 4*cos.(2*x))
+println("nodes: ", nodes)
+x = [n.x for n in nodes]
+y = [n.y for n in nodes]
+plot(x, y, "ro", markersize=2.0)
+xlabel("X Dimension")
+ylabel("Y Dimension")
+title("Cities")
+savefig("cities.png")

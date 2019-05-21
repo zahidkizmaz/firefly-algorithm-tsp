@@ -7,5 +7,7 @@ services:
     volumes: 
       - ".:/usr/src/"
     working_dir: /usr/src/src/
+    stdin_open: true
+    tty: true
     command: bash -c "chmod +x /usr/src/install-requirements.sh
               && /usr/src/install-requirements.sh && julia main.jl"
