@@ -45,7 +45,7 @@ module FireflyModule
         return dist, dist_info
     end
 
-    function caluculate_light_intensity(source_node::Firefly, destination_node::Firefly)
+    function light_intensity(source_node::Firefly, destination_node::Firefly)
         """Calculates the light intensity for the source firefly.
         """
     end

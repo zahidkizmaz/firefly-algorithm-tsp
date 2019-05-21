@@ -1,3 +1,7 @@
+using Pkg
+Pkg.update()
+Pkg.build("PyCall")
+
 # Pushing current dir to import modules. 
 push!(LOAD_PATH, "./")
 import NodeModule.Node, NodeModule.euclidean_distance, NodeModule.create_distance_matrix,
@@ -90,3 +94,9 @@ for t in 1:ITERATION_NUMBER
         end
     end
 end
+
+Pkg.add("PyPlot")
+using PyPlot
+x = range(0,stop=2*pi,length=1000); y = sin.(3*x + 4*cos.(2*x))
+plot(x, y, color="red", linewidth=2.0, linestyle="--")
+savefig("plot.png")
