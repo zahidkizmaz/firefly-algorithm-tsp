@@ -45,9 +45,12 @@ module FireflyModule
         return dist, dist_info
     end
 
-    function light_intensity(source_node::Firefly, destination_node::Firefly)
+    function light_intensity(source_node::Firefly, destination_node::Firefly, λ)
         """Calculates the light intensity for the source firefly.
         """
+        I_0 = source_node.cost
+        r, _ = hamming_distance(source_node, destination_node)
+        return  I_0 * ℯ ^ (-λ * (r^2))
     end
 
     function inversion_mutation(firefly::Firefly, index1::Int, index2::Int)
