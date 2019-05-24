@@ -50,7 +50,18 @@ module FireflyModule
         """
         I_0 = source_node.cost
         r, _ = hamming_distance(source_node, destination_node)
-        return  I_0 * ℯ ^ (-λ * (r^2))
+        return I_0 * ℯ ^ (-λ * (r^2))
+    end
+    
+    function attractiveness(source_node::Firefly, destination_node::Firefly, λ)
+        """Firefly’s attractiveness is proportional to the light
+        intensity seen by adjacent fireflies, we can now define the
+        attractiveness β of a firefly depending on distance between
+        two fireflies.
+        """
+        β = source_node.cost
+        r, _ = hamming_distance(source_node, destination_node)
+        return β * ℯ ^ (-λ ^ (r^2))
     end
 
     function inversion_mutation(firefly::Firefly, index1::Int, index2::Int)
