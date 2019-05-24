@@ -72,8 +72,10 @@ for t in tqdm(1:ITERATION_NUMBER)
 end
 
 best = sort(pop, by=p->p.cost)[1]
-println("Best firefly: ", best)
-# x = range(0,stop=2*pi,length=1000); y = sin.(3*x + 4*cos.(2*x))
+best_x = [n.x for n in best.path]
+best_y = [n.y for n in best.path]
+plot(best_x, best_y, "-")
+
 x = [n.x for n in nodes]
 y = [n.y for n in nodes]
 plot(x, y, "ro", markersize=2.0)
