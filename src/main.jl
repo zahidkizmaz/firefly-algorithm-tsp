@@ -1,13 +1,12 @@
 using Pkg
 Pkg.update()
-Pkg.build("PyCall")
 Pkg.add("PyPlot")
 
 using PyPlot
 using Random
 
 # Pushing current dir to import modules. 
-push!(LOAD_PATH, "./")
+push!(LOAD_PATH, "./src")
 import NodeModule.Node, NodeModule.euclidean_distance, NodeModule.create_distance_matrix,
         FireflyModule.Firefly, FireflyModule.path_cost, FireflyModule.init_firefly_paths,
         FireflyModule.hamming_distance, FireflyModule.inversion_mutation, FireflyModule.move_firefly
@@ -44,10 +43,11 @@ ATTRACTION_COEFF = 1
 ITERATION_NUMBER = 0 
 POPULATION_NUMBER = 5
 
-println("Insert your file name ")
-file_name = readline()
-println("File name: ", file_name)
-nodes = read_nodes("../data/berlin52.tsp")
+file_name = get(ENV, "TSP_FILE", nothing)
+if file_name != nothing
+    println("Reading from: ", file_name)
+    nodes = read_nodes(file_name)
+end
 # println(create_weights_matrix(nodes))
 f1 = Firefly(copy(nodes), -1.0)
 f2 = Firefly(copy(nodes), -1.0)
@@ -109,4 +109,5 @@ plot(x, y, "ro", markersize=2.0)
 xlabel("X Dimension")
 ylabel("Y Dimension")
 title("Cities")
-savefig("cities.png")
+if !isdir("graphs") mkdir("graphs"); end
+savefig("graphs/cities.png")

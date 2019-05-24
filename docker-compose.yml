@@ -6,6 +6,8 @@ services:
     image: julia:1.1.0-stretch
     volumes: 
       - ".:/usr/src/"
-    working_dir: /usr/src/src/
+    working_dir: /usr/src/
+    environment:
+      - TSP_FILE=${TSP_FILE}
     command: bash -c "chmod +x /usr/src/install-requirements.sh
-              && /usr/src/install-requirements.sh && julia main.jl"
+              && /usr/src/install-requirements.sh && julia src/main.jl"

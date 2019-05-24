@@ -87,7 +87,7 @@ module FireflyModule
             end
 
             f1.path[random_index], f1.path[index_to_move] = f1.path[index_to_move], f1.path[random_index]
-            println("swapped! ", f1.path[random_index], " -- ", f1.path[index_to_move])
+            # println("swapped! ", f1.path[random_index], " -- ", f1.path[index_to_move])
             if f1.path[index_to_move] == f2.path[index_to_move] number_of_swaps -= 1 end
             number_of_swaps -= 1
         end

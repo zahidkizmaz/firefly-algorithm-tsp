@@ -4,5 +4,7 @@
 deps/deps.jl
 
 data
+graphs
 launch.json
 settings.json
+.env
