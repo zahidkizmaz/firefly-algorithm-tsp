@@ -1,7 +1,9 @@
 using Pkg
 Pkg.update()
 Pkg.add("PyPlot")
+Pkg.add("ProgressBars")
 
+using ProgressBars
 using PyPlot
 using Random
 
@@ -38,71 +40,40 @@ function read_nodes(path::String)
 end
 
 
-LIGHT_ABSORPTION_COEFF = 1
+LIGHT_ABSORPTION_COEFF = 0.2
 ATTRACTION_COEFF = 1
-ITERATION_NUMBER = 0 
-POPULATION_NUMBER = 5
+ITERATION_NUMBER = 10 
+POPULATION_NUMBER = 500
 
 file_name = get(ENV, "TSP_FILE", nothing)
 if file_name != nothing
     println("Reading from: ", file_name)
     nodes = read_nodes(file_name)
+    distance_matrix = create_distance_matrix(nodes)
 end
-# println(create_weights_matrix(nodes))
-f1 = Firefly(copy(nodes), -1.0)
-f2 = Firefly(copy(nodes), -1.0)
-init_firefly_paths([f1, f2])
 
-distance_matrix = create_distance_matrix(nodes)
-f1.cost = path_cost(f1, distance_matrix)
-println(f1)
-# println(f1.path)
-# println(f2.path)
-r, dist_info = hamming_distance(f1, f2)
-p1 = path_cost(f1, distance_matrix)
-p2 = path_cost(f2, distance_matrix)
-
-println("Hamming d f1-f2: ", r, "info ", dist_info)
-println("f1 path cost: ", p1)
-println("f2 path cost: ", p2)
-
-if (p1 > p2) move_firefly(f1, f2, r) else move_firefly(f2, f1, r) end
-r, dist_info = hamming_distance(f1, f2)
-p1 = path_cost(f1, distance_matrix)
-p2 = path_cost(f2, distance_matrix)
-println("Hamming d f1-f2: ", r, "info ", dist_info)
-println("f1 path cost: ", p1)
-println("f2 path cost: ", p2)
-#println(f1.cost(distance_matrix))
-
+bests = []
 pop = [Firefly(copy(nodes), -1.0) for _ in 1:POPULATION_NUMBER]
-init_firefly_paths(pop)
+init_firefly_paths(pop, distance_matrix)
 println(length(pop), " Sized population created!")
-for t in 1:ITERATION_NUMBER
+for t in tqdm(1:ITERATION_NUMBER)
     for f1 in pop
         f1_li = path_cost(f1, distance_matrix)
         for f2 in pop
             f2_li = path_cost(f2, distance_matrix)
-            if f1_li > f2_li # TO-DO fix arrow when light intensity is implented!
-                old_hamming_d = hamming_distance(f1, f2)
-                new_hamming_d = Inf
-                while (new_hamming_d >= old_hamming_d)
-                    index1 = Int(ceil(rand() * length(f1.path)))
-                    index2 = Int(ceil(rand() * length(f1.path)))
-                    if (index1 >= index2) index1, index2 = index2, index1 end
-                    new_path = inversion_mutation(f1, index1, index2)
-                    temp_firefly = Firefly(new_path)
-                    new_hamming_d = hamming_distance(temp_firefly, f2)
-                    println("Old dist:", old_hamming_d, " -- New Dist:", new_hamming_d)
-                    println("f1 cost, new cost ", f1_li, " -- ", path_cost(temp_firefly, distance_matrix))
-                end
+            if f1_li < f2_li # TO-DO fix arrow when light intensity is implented!
+                r, _ = hamming_distance(f1, f2)
+                move_firefly(f2, f1, LIGHT_ABSORPTION_COEFF)
             end
         end
     end
+    sorted_pop = sort(pop, by=p->p.cost, rev=true)
+    push!(bests, sorted_pop[1])
 end
 
+best = sort(pop, by=p->p.cost)[1]
+println("Best firefly: ", best)
 # x = range(0,stop=2*pi,length=1000); y = sin.(3*x + 4*cos.(2*x))
-println("nodes: ", nodes)
 x = [n.x for n in nodes]
 y = [n.y for n in nodes]
 plot(x, y, "ro", markersize=2.0)
