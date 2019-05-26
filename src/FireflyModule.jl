@@ -1,7 +1,7 @@
 module FireflyModule
 
     import NodeModule.Node, NodeModule.euclidean_distance
-    using Random
+    using Random, Base
 
     mutable struct Firefly
         path::Array{Node}
@@ -62,12 +62,16 @@ module FireflyModule
         """
         β = source_node.cost
         r, _ = hamming_distance(source_node, destination_node)
-        return β * ℯ ^ (-λ ^ (r^2))
+        return β * exp(-λ ^ (r^2))
     end
 
-    function inversion_mutation(firefly::Firefly, index1::Int, index2::Int)
-        """Reverses the part of give array with indexes.
+    function inversion_mutation(firefly::Firefly, r::Int)
+        """Reverses the random part of given firefly path with
+        given difference.
         """
+        length_of_mutation = rand(2:r);
+        index1 = rand(1:length(firefly)-length_of_mutation);
+        index2 = index1 + length_of_mutation
         return reverse(firefly.path, index1, index2)
     end
     
