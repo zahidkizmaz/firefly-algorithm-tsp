@@ -3,11 +3,11 @@ version: "3"
 services:
   julia:
     container_name: julia_service
-    image: julia:1.1.0-stretch
+    build: 
+      context: .
     volumes: 
       - ".:/usr/src/"
     working_dir: /usr/src/
     environment:
       - TSP_FILE=${TSP_FILE}
-    command: bash -c "chmod +x /usr/src/install-requirements.sh
-              && /usr/src/install-requirements.sh && julia src/main.jl"
+    command: bash -c "julia src/main.jl"

@@ -1,12 +1,18 @@
 module FireflyModule
 
-    import NodeModule.Node, NodeModule.euclidean_distance
+    import NodeModule.Node, NodeModule.euclidean_distance, Base.show
     using Random, Base
 
     mutable struct Firefly
         path::Array{Node}
         cost::Float32
     end
+
+    function show(io::IO, n::Firefly)
+        print(string("Firefly:", n.cost, " "))
+    end
+
+    copy(s::Firefly) = Firefly(s.path, s.cost)
 
     function path_cost(firefly::Firefly, distance_matrix)::Float32
         """Calculates the total path cost from given distance matrix.
@@ -65,14 +71,23 @@ module FireflyModule
         return β * exp(-λ ^ (r^2))
     end
 
-    function inversion_mutation(firefly::Firefly, r::Int)
+    function inversion_mutation(firefly::Firefly, distance_matrix, r::Int)
         """Reverses the random part of given firefly path with
         given difference.
         """
         length_of_mutation = rand(2:r);
-        index1 = rand(1:length(firefly)-length_of_mutation);
+        max_len = length(firefly.path)-length_of_mutation
+        index1 = rand(1:max_len)
         index2 = index1 + length_of_mutation
-        return reverse(firefly.path, index1, index2)
+        mutated_path = reverse(firefly.path, index1, index2)
+        new_f = copy(firefly)
+        new_f.path = mutated_path
+        new_f.cost = path_cost(new_f, distance_matrix)
+        return new_f
+    end
+
+    function generate_mutated_fireflies(firefly::Firefly, distance_matrix, r::Int, k::Int)
+        return [inversion_mutation(copy(firefly), distance_matrix, r) for _ in 1:k]
     end
     
     function move_firefly(f1, f2, r)
