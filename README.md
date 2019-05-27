@@ -38,7 +38,7 @@ You can tune the hyperparameters of the algorithm by modifying the hyperparamete
     You need to have Julia-1.1 to run this project without any errors. Check this link to install Julia. <a href="https://julialang.org/downloads/"> Install Julia </a>  
 
     ```console
-   $ apt-get update && apt-get install \
+   $ sudo apt-get update && apt-get install \
                                 wget \
                                 ca-certificates \
                                 python3 \
@@ -50,7 +50,7 @@ You can tune the hyperparameters of the algorithm by modifying the hyperparamete
 
 ## <b>How to Run ?</b>
 
-- ### With Docker Compose
+- #### With Docker Compose
 
     ```console
     $ git clone https://github.com/zahidkizmaz/firefly-algorithm-tsp
@@ -59,7 +59,7 @@ You can tune the hyperparameters of the algorithm by modifying the hyperparamete
     $ ./start.sh data/st70.tsp
     ```
 
-- ### Without Docker Compose
+- #### Without Docker Compose
 
     Julia 1.1 must be installed to your system.     Before you run the `main.jl` you need to    define a environment variable named    `TSP_FILE`.
 
