@@ -12,10 +12,7 @@ include("./inversion_mutation.jl")
 include("./path_cost.jl")
 include("./read_nodes.jl")
 
-using Pkg
-using ProgressBars
-using PyPlot
-using Random
+using Pkg, ProgressBars, PyPlot, Random
 
 import NodeModule.Node, FireflyModule.Firefly
 
@@ -26,7 +23,7 @@ Pkg.add("ProgressBars")
 LIGHT_ABSORPTION_COEFF = 0.2
 ATTRACTION_COEFF = 1
 ITERATION_NUMBER = 5
-POPULATION_NUMBER = 20
+POPULATION_NUMBER = 12
 NUMBER_OF_MUTATION = 8
 
 file_name = get(ENV, "TSP_FILE", nothing)
@@ -46,8 +43,6 @@ for t in tqdm(1:ITERATION_NUMBER)
     for f1 in pop
         for f2 in pop
             if f1.cost < f2.cost 
-                # r, _ = hamming_distance(f1, f2)
-                # move_firefly(f2, f1, LIGHT_ABSORPTION_COEFF)
                 mutated_f1s = generate_mutated_fireflies(f2, distance_matrix, arc_distance(f1, f2), NUMBER_OF_MUTATION)
                 new_pop = [new_pop ; mutated_f1s]
                 push!(new_pop, f2)
@@ -59,16 +54,15 @@ for t in tqdm(1:ITERATION_NUMBER)
     while length(pop) != POPULATION_NUMBER
         pop!(pop)
     end
-    # pop = vec(sorted_pop[1:POPULATION_NUMBER])
     push!(bests, sorted_pop[1])
 end
 
 # Plotting and printing the best solutions.
-
 println("Bests: ",bests)
 best = sort(pop, by=p->p.cost)[1]
 best_x = [n.x for n in best.path]
 best_y = [n.y for n in best.path]
+best_cost = best.cost
 plot(best_x, best_y, "-")
 
 x = [n.x for n in nodes]
@@ -76,6 +70,7 @@ y = [n.y for n in nodes]
 plot(x, y, "ro", markersize=2.0)
 xlabel("X Dimension")
 ylabel("Y Dimension")
-title("Cities")
+title("Firefly Cost: $best_cost", fontsize=10)
+suptitle("File: $file_name", fontweight="bold")
 if !isdir("graphs") mkdir("graphs"); end
 savefig("graphs/cities.png")

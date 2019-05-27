@@ -1,6 +1,6 @@
 module FireflyModule
 
-    import NodeModule.Node, NodeModule.euclidean_distance, Base.show, Base.copy
+    import NodeModule.Node, Base.show, Base.copy
 
     mutable struct Firefly
         path::Array{Node}
