@@ -17,8 +17,10 @@ using Pkg, Random
 Pkg.update()
 Pkg.add("PyPlot")
 
-import NodeModule.Node, FireflyModule.Firefly
+import NodeModule.Node, FireflyModule.Firefly, Dates
 using PyPlot, Logging
+
+now = string(Dates.now())
 
 file_name = get(ENV, "TSP_FILE", nothing)
 if file_name != nothing
@@ -33,10 +35,10 @@ if !isdir("logs") mkdir("logs"); end
 
 if '/' in file_name
     tsp_file_name = split(file_name, "/")[end]
-    io_log = open("logs/$tsp_file_name.txt", "w+")
+    io_log = open("logs/$tsp_file_name-$now.txt", "w+")
 else
     tsp_file_name = file_name
-    io_log = open("logs/$tsp_file_name.txt", "w+")
+    io_log = open("logs/$tsp_file_name-$now.txt", "w+")
 end
 
 # Setting Logger!
@@ -49,6 +51,7 @@ ATTRACTION_COEFF = 1
 ITERATION_NUMBER = 10 
 POPULATION_NUMBER = 20 
 NUMBER_OF_MUTATION = 10
+
 
 bests = []
 pop = [Firefly(copy(nodes), -1.0) for _ in 1:POPULATION_NUMBER]
@@ -72,8 +75,9 @@ for t in 1:ITERATION_NUMBER
     end
     push!(bests, sorted_pop[1])
     current_best_cost = copy(bests[end].cost)
+    now = string(Dates.now())
     println("Step:",t, " - Best ", bests[end])
-    @info("Step:$t, Population Size:$POPULATION_NUMBER, Mutation Number:$NUMBER_OF_MUTATION",
+    @info("Step:$t, Population Size:$POPULATION_NUMBER, Mutation Number:$NUMBER_OF_MUTATION, Date:$now",
           current_best_cost)
 end
 
