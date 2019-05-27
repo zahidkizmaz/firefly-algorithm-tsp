@@ -45,14 +45,14 @@ end
 logger = SimpleLogger(io_log)
 global_logger(logger)
 
-
+# Setting hyperparameters!
 LIGHT_ABSORPTION_COEFF = 0.2
 ATTRACTION_COEFF = 1
 ITERATION_NUMBER = 100
 POPULATION_NUMBER = 150
 NUMBER_OF_MUTATION = 10
 
-
+# Main firefly algorithm
 bests = []
 pop = [Firefly(copy(nodes), -1.0) for _ in 1:POPULATION_NUMBER]
 init_firefly_paths(pop, distance_matrix)
