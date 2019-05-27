@@ -48,8 +48,8 @@ global_logger(logger)
 
 LIGHT_ABSORPTION_COEFF = 0.2
 ATTRACTION_COEFF = 1
-ITERATION_NUMBER = 10 
-POPULATION_NUMBER = 20 
+ITERATION_NUMBER = 100
+POPULATION_NUMBER = 150
 NUMBER_OF_MUTATION = 10
 
 
@@ -106,9 +106,10 @@ println("Saved figure:",fig_name)
 clf()
 
 x_cost = [b.cost for b in bests]
-plot(x_cost )
-xlabel("Path Cost")
-ylabel("Iteration Number")
+plot(x_cost)
+grid(true)
+ylabel("Path Cost")
+xlabel("Iteration Number")
 title("Firefly Iteration Graphic", fontsize=12)
 fig_name = "graphs/iteration_$tsp_file_name-cost_$best_cost.png"
 savefig(fig_name)

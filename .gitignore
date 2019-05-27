@@ -3,9 +3,6 @@
 *.jl.mem
 deps/deps.jl
 
-data
-logs
-graphs
 launch.json
 settings.json
 .env

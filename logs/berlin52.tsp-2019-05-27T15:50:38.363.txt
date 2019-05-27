@@ -1,0 +1,300 @@
+┌ Info: Step:1, Population Size:150, Mutation Number:10, Date:2019-05-27T15:50:44.438
+│   current_best_cost = 25913.285
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:2, Population Size:150, Mutation Number:10, Date:2019-05-27T15:50:48.833
+│   current_best_cost = 24566.307
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:3, Population Size:150, Mutation Number:10, Date:2019-05-27T15:50:52.419
+│   current_best_cost = 22680.432
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:4, Population Size:150, Mutation Number:10, Date:2019-05-27T15:50:56.274
+│   current_best_cost = 21676.14
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:5, Population Size:150, Mutation Number:10, Date:2019-05-27T15:50:58.929
+│   current_best_cost = 20103.877
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:6, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:01.759
+│   current_best_cost = 19455.729
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:7, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:04.43
+│   current_best_cost = 18289.275
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:8, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:07.325
+│   current_best_cost = 17245.293
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:9, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:10.578
+│   current_best_cost = 16440.012
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:10, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:13.532
+│   current_best_cost = 15722.343
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:11, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:16.38
+│   current_best_cost = 14943.396
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:12, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:19.531
+│   current_best_cost = 14514.637
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:13, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:22.606
+│   current_best_cost = 13681.014
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:14, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:25.378
+│   current_best_cost = 13397.491
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:15, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:28.215
+│   current_best_cost = 12882.285
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:16, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:31.081
+│   current_best_cost = 12398.888
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:17, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:33.928
+│   current_best_cost = 11942.12
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:18, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:36.741
+│   current_best_cost = 11486.483
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:19, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:39.456
+│   current_best_cost = 11064.883
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:20, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:42.323
+│   current_best_cost = 10760.633
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:21, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:45.119
+│   current_best_cost = 10450.641
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:22, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:47.901
+│   current_best_cost = 10152.749
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:23, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:50.777
+│   current_best_cost = 9882.914
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:24, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:53.591
+│   current_best_cost = 9689.8955
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:25, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:56.493
+│   current_best_cost = 9324.667
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:26, Population Size:150, Mutation Number:10, Date:2019-05-27T15:51:59.332
+│   current_best_cost = 9070.014
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:27, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:02.272
+│   current_best_cost = 9044.149
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:28, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:05.204
+│   current_best_cost = 8837.04
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:29, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:08.099
+│   current_best_cost = 8768.517
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:30, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:11.008
+│   current_best_cost = 8657.213
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:31, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:13.978
+│   current_best_cost = 8535.828
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:32, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:17.086
+│   current_best_cost = 8374.795
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:33, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:19.896
+│   current_best_cost = 8336.303
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:34, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:22.855
+│   current_best_cost = 8238.191
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:35, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:24.654
+│   current_best_cost = 8151.8115
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:36, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:26.63
+│   current_best_cost = 8103.8853
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:37, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:29.237
+│   current_best_cost = 8049.682
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:38, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:31.895
+│   current_best_cost = 8001.346
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:39, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:34.336
+│   current_best_cost = 7961.3413
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:40, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:36.4
+│   current_best_cost = 7916.1987
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:41, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:38.365
+│   current_best_cost = 7892.2334
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:42, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.637
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:43, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.662
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:44, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.686
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:45, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.709
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:46, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.734
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:47, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.762
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:48, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.786
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:49, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.809
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:50, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.833
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:51, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.856
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:52, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.88
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:53, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.903
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:54, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.932
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:55, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.956
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:56, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:39.981
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:57, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.005
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:58, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.03
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:59, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.058
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:60, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.083
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:61, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.106
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:62, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.13
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:63, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.153
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:64, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.177
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:65, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.2
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:66, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.223
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:67, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.246
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:68, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.269
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:69, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.293
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:70, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.317
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:71, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.34
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:72, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.371
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:73, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.395
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:74, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.421
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:75, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.444
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:76, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.474
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:77, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.505
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:78, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.529
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:79, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.552
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:80, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.576
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:81, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.599
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:82, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.622
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:83, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.646
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:84, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.67
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:85, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.697
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:86, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.722
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:87, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.746
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:88, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.77
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:89, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.795
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:90, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.818
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:91, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.842
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:92, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.866
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:93, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.896
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:94, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.927
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:95, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.958
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:96, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:40.984
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:97, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:41.019
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:98, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:41.049
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:99, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:41.076
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
+┌ Info: Step:100, Population Size:150, Mutation Number:10, Date:2019-05-27T15:52:41.106
+│   current_best_cost = 7866.6587
+└ @ Main /usr/src/src/main.jl:80
