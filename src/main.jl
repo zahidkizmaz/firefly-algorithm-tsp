@@ -1,50 +1,32 @@
-using Pkg
-Pkg.update()
-Pkg.add("PyPlot")
-Pkg.add("ProgressBars")
+# Pushing current dir to import modules. 
+push!(LOAD_PATH, "./src")
+# Including the necessary files.
+include("./FireflyModule.jl")
+include("./NodeModule.jl")
+include("./arc_distance.jl")
+include("./create_distance_matrix.jl")
+include("./euclidean_distance.jl")
+include("./generate_mutated_fireflies.jl")
+include("./init_firefly.jl")
+include("./inversion_mutation.jl")
+include("./path_cost.jl")
+include("./read_nodes.jl")
 
+using Pkg
 using ProgressBars
 using PyPlot
 using Random
 
-# Pushing current dir to import modules. 
-push!(LOAD_PATH, "./src")
-import NodeModule.Node, NodeModule.euclidean_distance, NodeModule.create_distance_matrix,
-        FireflyModule.Firefly, FireflyModule.path_cost, FireflyModule.init_firefly_paths,
-        FireflyModule.hamming_distance, FireflyModule.inversion_mutation, FireflyModule.move_firefly,
-        FireflyModule.arc_distance, FireflyModule.generate_mutated_fireflies
+import NodeModule.Node, FireflyModule.Firefly
 
-
-function read_nodes(path::String)
-    """Reading nodes from giving file path.
-    """
-    nodes = Node[]
-    open(path) do f
-        is_coords = false
-        for line in eachline(f)
-            if line == "EOF"
-                break
-            end
-            if line[1] == '1' 
-                is_coords = true
-            end
-            if is_coords
-                line_vals = split(line)
-                id = parse(Int16, line_vals[1])
-                x_coord = parse(Float32, line_vals[2])
-                y_coord = parse(Float32, line_vals[3])
-                push!(nodes, Node(id, x_coord, y_coord))
-            end
-        end
-    end
-    return nodes
-end
-
+Pkg.update()
+Pkg.add("PyPlot")
+Pkg.add("ProgressBars")
 
 LIGHT_ABSORPTION_COEFF = 0.2
 ATTRACTION_COEFF = 1
-ITERATION_NUMBER = 75  
-POPULATION_NUMBER = 200 
+ITERATION_NUMBER = 5
+POPULATION_NUMBER = 20
 NUMBER_OF_MUTATION = 8
 
 file_name = get(ENV, "TSP_FILE", nothing)
@@ -53,23 +35,6 @@ if file_name != nothing
     nodes = read_nodes(file_name)
     distance_matrix = create_distance_matrix(nodes)
 end
-
-"""
-f1 = Firefly(copy(nodes), -1.0)
-f2 = Firefly(copy(nodes), -1.0)
-init_firefly_paths([f1,f2], distance_matrix)
-
-println("F1 cost: ", f1.cost, " F2 cost:", f2.cost)
-if f1.cost > f2.cost
-    new_pop = generate_mutated_fireflies(f2, arc_distance(f1, f2), NUMBER_OF_MUTATION)
-else
-    new_pop = generate_mutated_fireflies(f1, arc_distance(f1, f2), NUMBER_OF_MUTATION)
-end
-init_firefly_paths(new_pop, distance_matrix)
-
-println(arc_distance(f1,f2))
-[println(n.cost, " - ", arc_distance(f2, n)) for n in new_pop]
-"""
 
 bests = []
 pop = [Firefly(copy(nodes), -1.0) for _ in 1:POPULATION_NUMBER]
@@ -97,6 +62,8 @@ for t in tqdm(1:ITERATION_NUMBER)
     # pop = vec(sorted_pop[1:POPULATION_NUMBER])
     push!(bests, sorted_pop[1])
 end
+
+# Plotting and printing the best solutions.
 
 println("Bests: ",bests)
 best = sort(pop, by=p->p.cost)[1]
